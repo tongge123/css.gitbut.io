@@ -1,0 +1,286 @@
+.big {
+    width: 100%;
+    height: 100vh;
+    display: block;
+    -webkit-perspective: 1500px;
+    perspective: 1500px
+}
+
+input {
+    display: none
+}
+
+input+.box {
+    width: 300px;
+    height: 400px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: 50% 50% 200px;
+    transform-origin: 50% 50% 200px
+}
+
+input+.box::after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    display: block;
+    -webkit-transition: inherit;
+    transition: inherit;
+    border-radius: 20px;
+    background: rgba(117, 117, 117, 0.6);
+    z-index: -2
+}
+
+input+.box .ye {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    display: block
+}
+
+input+.box .tp {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: url(../fangai/img/600.jpg);
+    background-size: cover;
+    border-radius: inherit;
+    z-index: -1;
+    border-radius: 20px
+}
+
+input+.box .tp::before {
+    background: rgba(255, 255, 0, 0);
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    display: block;
+    -webkit-transition: inherit;
+    transition: inherit;
+    border-radius: 20px
+}
+
+input+.box .bar {
+    width: 20px;
+    height: 20px;
+    background: red;
+    display: inline-block;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    margin: 8px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: all .3s;
+    transition: all .3s
+}
+
+input+.box .bar::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    display: block;
+    content: "";
+    background: #80005a;
+    -webkit-transform-origin: 100% 0 0;
+    transform-origin: 100% 0 0;
+    -webkit-transform: translateY(20px) rotateX(90deg);
+    transform: translateY(20px) rotateX(90deg);
+    height: 0;
+    -webkit-transition: inherit;
+    transition: inherit;
+    position: relative
+}
+
+input+.box .bar::after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    display: block;
+    content: 'M';
+    background: gray;
+    -webkit-transition: inherit;
+    transition: inherit;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0)
+}
+
+input+.box .bar span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    display: block;
+    width: 0;
+    background: gray;
+    height: 20px;
+    -webkit-transform-origin: 0 50% 0;
+    transform-origin: 0 50% 0;
+    -webkit-transform: rotateY(-90deg) translateZ(-20px);
+    transform: rotateY(-90deg) translateZ(-20px)
+}
+
+input:checked+.box {
+    -webkit-transform: rotateX(60deg) rotateY(0deg) translateZ(100px);
+    transform: rotateX(60deg) rotateY(0deg) translateZ(100px)
+}
+
+input:checked+.box::after {
+    -webkit-transform: translateZ(-20px);
+    transform: translateZ(-20px)
+}
+
+input:checked+.box .lou .bar1 {
+    -webkit-transition: all .8s;
+    transition: all .8s
+}
+
+input:checked+.box .lou .bar1::after {
+    -webkit-transform: translateZ(100px);
+    transform: translateZ(100px)
+}
+
+input:checked+.box .lou .bar1:before {
+    height: 100px
+}
+
+input:checked+.box .lou .bar1 span {
+    width: 100px
+}
+
+input:checked+.box .lou .bar2 {
+    -webkit-transition: all .7s;
+    transition: all .7s
+}
+
+input:checked+.box .lou .bar2::after {
+    -webkit-transform: translateZ(90px);
+    transform: translateZ(90px)
+}
+
+input:checked+.box .lou .bar2:before {
+    height: 90px
+}
+
+input:checked+.box .lou .bar2 span {
+    width: 90px
+}
+
+input:checked+.box .lou .bar3 {
+    -webkit-transition: all .6s;
+    transition: all .6s
+}
+
+input:checked+.box .lou .bar3::after {
+    -webkit-transform: translateZ(80px);
+    transform: translateZ(80px)
+}
+
+input:checked+.box .lou .bar3:before {
+    height: 80px
+}
+
+input:checked+.box .lou .bar3 span {
+    width: 80px
+}
+
+input:checked+.box .lou .bar4 {
+    -webkit-transition: all .5s;
+    transition: all .5s
+}
+
+input:checked+.box .lou .bar4::after {
+    -webkit-transform: translateZ(70px);
+    transform: translateZ(70px)
+}
+
+input:checked+.box .lou .bar4:before {
+    height: 70px
+}
+
+input:checked+.box .lou .bar4 span {
+    width: 70px
+}
+
+input:checked+.box .lou .bar5 {
+    -webkit-transition: all .9s;
+    transition: all .9s
+}
+
+input:checked+.box .lou .bar5::after {
+    -webkit-transform: translateZ(110px);
+    transform: translateZ(110px)
+}
+
+input:checked+.box .lou .bar5:before {
+    height: 110px
+}
+
+input:checked+.box .lou .bar5 span {
+    width: 110px
+}
+
+input:checked+.box .lou .bar6 {
+    -webkit-transition: all .5s;
+    transition: all .5s
+}
+
+input:checked+.box .lou .bar6::after {
+    -webkit-transform: translateZ(70px);
+    transform: translateZ(70px)
+}
+
+input:checked+.box .lou .bar6:before {
+    height: 70px
+}
+
+input:checked+.box .lou .bar6 span {
+    width: 70px
+}
+
+input:checked+.box .lou .bar7 {
+    -webkit-transition: all .4s;
+    transition: all .4s
+}
+
+input:checked+.box .lou .bar7::after {
+    -webkit-transform: translateZ(50px);
+    transform: translateZ(50px)
+}
+
+input:checked+.box .lou .bar7:before {
+    height: 50px
+}
+
+input:checked+.box .lou .bar7 span {
+    width: 50px
+}
+
+/*# sourceMappingURL=./chart.css.map */

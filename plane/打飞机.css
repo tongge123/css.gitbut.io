@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+  }
+  .sty {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .butt {
+    border-radius: 30px;
+    width: 150px;
+    height: 30px;
+    background: #C4C9CA;
+    border: 1px solid black;
+    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 50px;
+  }
+  #box {
+    margin: 0 auto;
+    width: 320px;
+    height: 568px;
+    position: relative;
+    z-index: 1;
+  }
+  #box #start {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../plane/img/background-start.png) no-repeat;
+  }
+  #box #start #bu {
+    border-radius: 30px;
+    width: 150px;
+    height: 30px;
+    background: #C4C9CA;
+    border: 1px solid black;
+    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 50px;
+  }
+  #box #box1 {
+    display: none;
+    background: url(../plane/img/background-game.png) no-repeat;
+    z-index: 99;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  #box #box1 #zt {
+    display: none;
+  }
+  #box #box1 #zt button {
+    border-radius: 30px;
+    width: 150px;
+    height: 30px;
+    background: #C4C9CA;
+    border: 1px solid black;
+    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 50px;
+    top: 50%;
+    z-index: 999;
+  }
+  #box #box1 #zt #jx {
+    margin-top: -40px;
+  }
+  #box #box1 img {
+    position: absolute;
+  }
+  #box #js {
+    z-index: 9999;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 50%;
+  }
+  #box #js button {
+    border-radius: 30px;
+    width: 150px;
+    height: 30px;
+    background: #C4C9CA;
+    border: 1px solid black;
+    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 50px;
+    position: relative;
+    bottom: 0;
+  }

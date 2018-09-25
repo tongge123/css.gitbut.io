@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="./jquery.js"></script>
+	</head>
+	<body>
+		<div id="box">
+		<div id="zp">
+			<img src="./img/girl-2.jpg">
+			<div id="zp1"></div>
+		</div>
+			<div id="zp2"><img src="./img/girl-2.jpg" id="zp22"></div>
+		</div>	
+		<style type="text/css">
+			body{
+				margin: 0;
+			}
+			#box{
+				/*margin: 0 auto;*/
+				width: 200px;
+				height: 200px;
+				position: relative;
+			}
+			#box img{
+				vertical-align: top;
+			}
+			#zp2{
+				/*display: none;*/
+				position: absolute;
+				top: 0;
+				left: 320px;
+				width: 300px;
+				height: 300px;
+				background: red;
+				overflow: hidden;
+			}
+			#zp2 img{
+				position: absolute;
+				width: 600px;
+				height: 600px;
+				top:0;
+				left: 0;
+				
+			}
+			#zp{
+				position: relative;
+			}
+			#zp1{
+				/*display: none;*/
+				width: 100px;
+				height: 100px;
+				background: rgba(255,255,0,0.4);
+				position: absolute;
+				top: 0;
+				left: 0;
+				cursor: move;	
+			}
+			#zp img{
+				width: 200px;
+				height: 200px;
+			}
+		</style>
+		<script>
+			var box=document.getElementById('box');
+			var zp=document.getElementById('zp');
+			var zp1=document.getElementById('zp1');
+			var zp2=document.getElementById('zp2');
+			var zp22=document.getElementById('zp22');
+			zp.onmouseover=function(){
+//				$('zp1').css("display","block");
+                zp1.style.display="block";
+                zp2.style.display="block";
+			}
+			zp.onmouseout=function(){
+				zp1.style.display="none";
+                zp2.style.display="none";
+			}
+			zp.onmousemove=function(event){
+				var event=event||window.event;
+				var sbx=event.pageX;
+				var sby=event.pageY;
+				var targetx=sbx-box.offsetLeft-zp1.offsetWidth/2;
+				var targety=sby-box.offsetTop-zp1.offsetHeight/2;
+				if(targetx<0){ targetx=0};
+				if(targety<0){ targety=0};
+				if(targetx>box.offsetWidth-zp1.offsetWidth){
+					targetx=box.offsetWidth-zp1.offsetWidth};
+//				if(targetx>200){targetx=200};
+				if(targety>100){targety=100};
+				zp1.style.left=targetx+'px';
+				zp1.style.top=targety+'px';
+//				var x=zp22.offsetWidth-zp2.offsetWidth;
+//				var y=zp.offsetWidth-zp1.offsetWidth;
+				var vate=zp22.offsetWidth/zp.offsetWidth;
+//              var vate=x/y;
+				zp22.style.left=-vate*targetx+'px';
+				zp22.style.top=-vate*targety+'px';
+			}
+			
+		</script>
+	</body>
+</html>

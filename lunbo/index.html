@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Document</title>
+	<script src="./jquery.js"></script>
+</head>
+<body>
+	<div class="c1">
+    	<div class="ig">
+    		<a class="bb"><img src="./img/1.jpg"  /></a>
+    		<a><img src="./img/2.jpg"  /></a>
+    		<a><img src="./img/3.jpg" /></a>
+    		<a><img src="./img/4.jpg" /></a>
+    	</div>
+    	<div class="ig1">
+    		<button id="shang" value="shang">shang</button>
+    		<button id="next" value="next">next</button>
+    	</div>
+    	<div class="ig2">
+    		<li>1</li>
+    		<li>2</li>
+    		<li>3</li>
+    		<li>4</li>
+    	</div>
+    </div>
+    <style type="text/css">
+    	li{
+    	list-style: none;
+    	}
+    	.c1{
+    		/*overflow: hidden;*/
+    		position: relative;
+    		width: 300px;
+    		height: 150px;	
+    	}
+    	.ig{
+    		width: 300px;
+    		height: 150px;
+    	}
+    	img.bb{
+    		display: block;
+    	}
+    	
+    	.ig a:first-child{
+    		display: block;
+    	}
+    	.ig a{
+    		width: 300px;
+    		height: 150px;
+    		display: none;
+    		
+    	}
+    	.ig img{
+    			position: absolute;
+    			top: 0;
+    			left: 0;
+    			/*display: none;*/
+    		/*float:left;*/
+    		z-index: 1;
+    		width: 300px;
+    		height: 150px;    		
+    	}
+    	button{
+    		z-index: 5;
+    		position: absolute;
+    		top: 0;
+    		bottom: 0;
+    		margin: auto;
+    		width: 50px;
+    		height: 30px;
+    		cursor: pointer;
+    	}
+    	#shang{
+    		left: 0;
+    	}
+    	#next{
+    		right: 0;
+    	}
+    	.ig2{
+    		z-index: 6;
+    		position: absolute;
+    		bottom: 10px;
+    		/*right: 30%;*/
+    		right: 30%;
+    		margin: 0 auto;
+    		width: 100px;
+    	}
+    	.ig2 li{
+    		height: 20px;
+    		width: 20px;
+    		float: left;
+    		background: white;
+    		border-radius: 50%;
+    		text-align: center;
+    		margin-left: 5PX;
+    		border: 1px solid #cccccc;
+    		box-sizing: border-box;
+    		cursor: pointer;
+    	}
+    	.ig2 li:first-child{
+    		background: yellow;
+    	}
+    	
+    </style>
+    <script>
+    	var index1=0;
+    	$("#shang").click(function(){
+    		index1--;
+    		if(index1<0){
+    			index1=3;			
+    		}		
+    		console.log(index1);
+    		$(".ig a").eq(index1).fadeIn(1000).siblings().fadeOut(1000);
+    		$(".ig2 li").eq(index1).css("background","yellow").siblings().css("background","white");
+//  		$(".ig a").eq(index).css("display","block").siblings().css("display","none");
+            return index1;
+    	});
+    	$("#next").click(function(){
+    		index1++;
+    		if(index1>3){
+    			index1=0;
+    		}
+    		console.log(index1);
+    		
+    		$('.ig a').eq(index1).css("display","block").siblings().css("display","none");
+    		return $('.ig2 li').eq(index1).css("background","yellow").siblings().css("background","white"); 
+    	});
+    	$(".ig2 li").click(function(){
+    		
+    		$(this).css("background","yellow").siblings().css("background","white");
+//  		$(this).index()=index1;
+            var index1=$(this).index();
+    		$(".ig a").eq(index1).css("display","block").siblings().css("display","none");
+    		return index1;
+    	});
+    	var t=setInterval(play,3000)
+    	function play(){
+    		index1++;
+    		if(index1>3){
+    			index1=0;
+    		}
+    		console.log(index1);
+    		$(".ig2 li").eq(index1).css("background","yellow").siblings().css("background","white");
+    		$(".ig a").eq(index1).fadeIn(1000).siblings().fadeOut(1000);
+//  		$(".ig a").eq(index).addClass('bb').siblings().removeClass('bb');
+//  		$(".ig a").eq(index).css("display","block").siblings().css("display","none");
+    	}
+    	$(".ig a, .ig2 li,button").hover(
+    		function(){
+    		clearInterval(t)
+    	},
+    	function(){
+    		t=setInterval(play,3000)
+    		function play(){
+    			index1++;
+    			if(index1>3)
+    			{
+    				index1=0;
+    			}
+    			$(".ig2 li").eq(index1).css("background","yellow").siblings().css("background","white");
+    			$(".ig a").eq(index1).fadeIn(1000).siblings().fadeOut(1000);
+    		};
+    	});
+    </script> 
+</body>
+</html>

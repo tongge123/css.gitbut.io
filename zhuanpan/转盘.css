@@ -1,0 +1,22 @@
+.box {
+    width: 650px;
+    height: 600px;
+    position: relative;
+    margin: 0 auto;
+    background: yellow url(../zhuanpan/img/turntable-bg.jpg) no-repeat;
+  }
+  .box #box2 {
+    width: 450px;
+    height: 450px;
+    z-index: 1;
+    position: absolute;
+    top: 60px;
+    left: 117px;
+  }
+  .box #box1 {
+    position: absolute;
+    top: 150px;
+    left: 250px;
+    z-index: 2;
+  }
+  
